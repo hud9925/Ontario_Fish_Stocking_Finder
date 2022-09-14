@@ -1,7 +1,6 @@
-import geopy
 import numpy as np
-from math import radians, cos, sin, asin, sqrt
 from geopy.geocoders import Nominatim
+
 
 class User:
     """
@@ -38,7 +37,8 @@ class User:
 
     def distance_from_user(self, Latitude, Longitude) -> float:
         """
-        Returns the shortest distance between the stocked waterbody from the user(Using the Haversine Formula) in kilometers
+        Returns the shortest distance between the inputted Latitude and Longitude coordinates
+         from the user(Using the Haversine Formula) in kilometers
 
         <Latitude>: latitude of the waterbody
         <Longitude>: longitude of the waterbody
@@ -57,11 +57,11 @@ class User:
 
         # Haversine formula
         lat_distance, long_distance = end_lat - start_lat, end_long - start_long
-        angle = np.sin(lat_distance/2) **2 + np.cos(start_lat) * np.cos(end_lat) * np.sin(long_distance/2)**2
+        angle = np.sin(lat_distance / 2) ** 2 + np.cos(start_lat) * np.cos(end_lat) * np.sin(long_distance / 2) ** 2
         c = 2 * np.arcsin(np.sqrt(angle))
         r = 6371
 
-        return c * r
+        return round(c * r, 2)
 
 
 if __name__ == '__main__':
