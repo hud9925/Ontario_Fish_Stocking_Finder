@@ -210,10 +210,12 @@ class stat_page(tk.Frame):
         self.controller = controller
         ttk.Frame.__init__(self, parent)
         label = ttk.Label(self, text="Ontario Fish Stocking Stats", font=title_font)
+        label2 = ttk.Label(self, text="Coming Soon", font=title_font)
 
         label.pack(pady=10, padx=10)
         option1 = ttk.Button(self, text="Return to Menu",
                              command=lambda: controller.show_frame(main_menu))
+        label2.pack()
         option1.pack()
 
 
