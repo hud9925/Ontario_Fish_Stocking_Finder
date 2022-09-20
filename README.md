@@ -33,3 +33,6 @@ pip install -r requirements.txt
 ```
 ## Setup and Executing
 Once all files have been downloaded, run "gui.py" to execute the program
+
+## Sources
+Stocking data retrieved from the Ontario Ministry of Natural Resources and Forestry, https://geohub.lio.gov.on.ca/datasets/793ddc06b9434694b99605edca233f89_0/explore?location=47.085511%2C-84.503585%2C4.98
