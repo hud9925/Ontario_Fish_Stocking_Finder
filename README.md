@@ -31,3 +31,5 @@ pip install -r requirements.txt
 ##
 
 ```
+## Setup and Executing
+Once all files have been downloaded, run "gui.py" to execute the program
