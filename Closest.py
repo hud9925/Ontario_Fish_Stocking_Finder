@@ -44,7 +44,7 @@ def getFishPresent2(waterbody):
 
 def getWaterBodyCoordinates(waterbody):
     """
-
+    Returns the coordinates of the waterbody from the dataset
     """
     return CSV_Methods.getWaterbodylocation("Useful_data.csv", waterbody)
 
