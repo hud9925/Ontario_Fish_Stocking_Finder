@@ -1,10 +1,9 @@
-from User_methods import User
+from backend.api.User_methods import User
 import pandas as pd
 
 """
 Methods that filters/cleans data from a csv to be more useful 
 """
-
 
 def cleaning_data(csv, unnecessary_columns: list) -> pd.DataFrame:
     """
@@ -63,8 +62,6 @@ def getWaterbodylocation(csv, waterbody) -> tuple[float, float]:
                       data.loc[data["Official_Waterbody_Name"] == waterbody]["Longitude"])
     return find_waterbody
 
-
-
 def getWaterbody(waterbody, csv) -> any:
     """
     Removes all Entries within the pandas DataFrame except for the desired Waterbody
@@ -83,7 +80,6 @@ def fish_species_present(Waterbodies: dict, csv) -> dict:
 
     Waterbodies must be valid stocked waterbodies in Ontaro
     :param Waterbodies: a dictionary of stocked waterbodies
-
         # Testing dataset where each waterbody only has one specie stocked
     >>> bodies = {'Conestogo River': 11.825415597935333, 'Carroll Creek': 22.869145715961995, 'Mill Creek': 25.839009975762192, 'Fairy Lake': 47.50652814669023, 'Spencer Creek': 58.41003210962975}
     >>> len(fish_species_present(bodies, "Useful_data.csv").keys()) == 5

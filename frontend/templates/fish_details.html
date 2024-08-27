@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Fish Stocked in {{ waterbody_name }}</h1>
+        </header>
+
+        <div id="fishDetails">
+            <ul>
+                {% for species, details in fish_data.items() %}
+                    <li>{{ species }}: {{ details['Number_of_Fish_Stocked'] }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="back-link">
+            <button onclick="history.back()" class="back-button">Back to Waterbodies List</button>
+        </div>
+    </div>
+</body>
+</html>

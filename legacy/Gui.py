@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 import json
-import Closest
+import legacy.Closest as Closest
 from ttkthemes.themed_tk import ThemedTk
 title_font = ("Times Bold", 14)
 

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ontario Fish Stocking Finder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Find the Closest Stocked Waterbodies</h1>
+            <p class="subheader">Find the closest stocked waterbodies near your location in Ontario! Please enter your address in this format: <strong>street number - street name - city</strong>.</p>
+        </header>
+        
+        <form id="addressForm">
+            <label for="address">Enter Your Ontario Address:</label>
+            <input type="text" id="address" name="address" required>
+            <button type="submit">Search</button>
+        </form>
+        
+        <div id="results">
+            <!-- Results will be displayed here -->
+        </div>
+        <div id="fishDetails">
+            <!-- Fish details will be displayed here when a waterbody is clicked -->
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('addressForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let address = document.getElementById('address').value;
+
+            fetch('/find_waterbodies', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: `address=${address}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                let resultsDiv = document.getElementById('results');
+                resultsDiv.innerHTML = "<h2>Closest Waterbodies:</h2>";
+                data.forEach(item => {
+                    let distance = parseFloat(item[1]).toFixed(1);
+                    resultsDiv.innerHTML += `<div class="waterbody-item"><a href="#" onclick="getFishDetails('${item[0]}')">${item[0]} - ${distance} km away</a></div>`;
+                });
+            });
+        });
+
+        function getFishDetails(waterbodyName) {
+            window.location.href = `/get_waterbody_details?waterbody=${waterbodyName}`;
+        }
+    </script>
+</body>
+</html>
