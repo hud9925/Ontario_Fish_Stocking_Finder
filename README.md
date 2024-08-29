@@ -34,6 +34,7 @@ You can access the application [here](https://3.17.178.206/).
 - **PostgreSQL on AWS RDS:** The relational database management system is hosted on AWS RDS, providing reliable storage and query performance for the waterbody data.
 - **Nginx:** Configured as a reverse proxy to direct incoming traffic to the appropriate services and enhance security.
 
-## Accessing the Application
+## Sources
+Stocking data retrieved from the Ontario Ministry of Natural Resources and Forestry, https://geohub.lio.gov.on.ca/datasets/793ddc06b9434694b99605edca233f89_0/explore?location=47.085511%2C-84.503585%2C4.98
 
 
