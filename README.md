@@ -1,38 +1,39 @@
 # Ontario Fish Stocking Finder
 
-Python project that allows users to find
-the closest body of water stocked with fish by the Ontario Ministry of Natural Resources and Fisheries.
-After geocoding a valid Ontario Address, users can find the closest stocked bodies of water,
-and the number of fish species stocked. Users can then find directions to the desired body of water by being redirected through google maps.
+The Ontario Fish Stocking Finder is a Python-based web application that helps users find the closest waterbodies stocked with fish by the Ontario Ministry of Natural Resources and Fisheries. 
 
-## Libraries and Services Used
-(python 3.9+)
-- geopy
-- numpy
-- pandas.py
-- webbrowser.py
-- tkinter
-- ttkthemes
+You can access the application [here](https://3.17.178.206/).
 
-## Installation
 
-In terminal, enter
-git clone https://github.com/hud9925/Ontario_Fish_Stocking_Finder
+### Search Results
 
-Then use the package manager [pip](https://pip.pypa.io/en/stable/) to install the required libraries
+![image](https://github.com/user-attachments/assets/734a77a7-0882-49a5-a173-060b919471f5)
 
-Also in terminal, enter pip install -r requirements.txt
-```
-##
+![image](https://github.com/user-attachments/assets/9082880e-3cb6-42a5-a6ff-bdbb362f3948)
 
-git clone https://github.com/hud9925/Ontario_Fish_Stocking_Finder
-pip install -r requirements.txt
 
-##
+## Technologies Used
 
-```
-## Setup and Executing
-Once all files have been downloaded, run "gui.py" to execute the program
+- **Backend Framework:** Python with Flask for server-side logic.
+- **Database:** PostgreSQL hosted on AWS RDS for managing and storing waterbody and fish stocking data.
+- **Geocoding API:** Utilized for converting addresses into geographical coordinates.
+- **Hosting:** The application is hosted on an AWS EC2 instance
+- **Reverse Proxy:** Nginx is used as a reverse proxy server to handle incoming web requests.
+- **Gunicorn:** For managing multiple worker processes to handle concurrent requests.
 
-## Sources
-Stocking data retrieved from the Ontario Ministry of Natural Resources and Forestry, https://geohub.lio.gov.on.ca/datasets/793ddc06b9434694b99605edca233f89_0/explore?location=47.085511%2C-84.503585%2C4.98
+## How It Works
+
+1. **User Input:** Users enter their Ontario address.
+2. **Address Geocoding:** The application converts the address into latitude and longitude coordinates.
+3. **Database Query:** The app queries the PostgreSQL database hosted on AWS RDS to find the closest stocked waterbodies.
+4. **Results Display:** The closest waterbodies, along with their distances, are displayed on the frontend.
+
+## Deployment and Hosting Details
+
+- **AWS EC2:** The web application is deployed on an Amazon EC2 instance, which serves the frontend and backend to users.
+- **PostgreSQL on AWS RDS:** The relational database management system is hosted on AWS RDS, providing reliable storage and query performance for the waterbody data.
+- **Nginx:** Configured as a reverse proxy to direct incoming traffic to the appropriate services and enhance security.
+
+## Accessing the Application
+
+
