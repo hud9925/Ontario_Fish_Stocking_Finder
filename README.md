@@ -2,7 +2,7 @@
 
 The Ontario Fish Stocking Finder is a Python-based web application that helps users find the closest waterbodies stocked with fish by the Ontario Ministry of Natural Resources and Fisheries. 
 
-You can access the application [here](https://3.17.178.206/).
+You can access the application [here](onfishstockingfinder.ca).
 
 
 ### Search Results
